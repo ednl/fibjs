@@ -44,8 +44,13 @@ function mousePressed() {
 function draw() {
 	background(102);
 	fill(255);
-	circle(x0, y, 2 * sqrt(f0) * factor);
-	circle(x1, y, 2 * sqrt(f1) * factor);
+	if (f0 < f1) {
+		circle(x0, y, 2 * sqrt(f0) * factor);
+		circle(x1, y, 2 * sqrt(f1) * factor);
+	} else {
+		circle(x1, y, 2 * sqrt(f1) * factor);
+		circle(x0, y, 2 * sqrt(f0) * factor);
+	}
 
 	fill(0);
 	text('' + f0, x0, y);
