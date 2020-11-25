@@ -30,6 +30,7 @@ function mousePressed() {
 			growstep = min(f0, f1) / steps;
 			dir = f1 > f0 ? -1 : 1;
 			moving = true;
+			return false;
 		}
 	} else if (mouseButton === RIGHT) {
 		if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
