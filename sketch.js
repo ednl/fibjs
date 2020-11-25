@@ -18,6 +18,8 @@ function setup() {
 	createCanvas(1024, 900);
 	strokeWeight(1);
 	stroke(0);
+	textAlign(CENTER, CENTER);
+	textSize(16);
 }
 
 function mousePressed() {
@@ -42,15 +44,19 @@ function mousePressed() {
 function draw() {
 	background(102);
 	fill(255);
-	circle(x0, y, f0 * factor);
-	circle(x1, y, f1 * factor);
+	circle(x0, y, 2 * sqrt(f0) * factor);
+	circle(x1, y, 2 * sqrt(f1) * factor);
+
+	fill(0);
+	text('' + f0, x0, y);
+	text('' + f1, x1, y);
 
 	if (moving) {
 		fill(153);
 		if (dir == -1) {
-			circle(x1 - step * movestep, y, (f1 + step * growstep) * factor);
+			circle(x1 - step * movestep, y, 2 * sqrt(f1 + step * growstep) * factor);
 		} else {
-			circle(x0 + step * movestep, y, (f0 + step * growstep) * factor);
+			circle(x0 + step * movestep, y, 2 * sqrt(f0 + step * growstep) * factor);
 		}
 		step++;
 		if (step > steps) {
