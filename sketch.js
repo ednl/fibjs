@@ -56,6 +56,13 @@ function draw() {
 	text('' + f0, x0, y);
 	text('' + f1, x1, y);
 
+	if (f0 > 0 && f1 > 0) {
+		const n = max(f0, f1);
+		const d = min(f0, f1);
+		const phi = round(n / d, 6);
+		text('' + n + ' / ' + d + ' = ' + phi, width / 2, height - 20);
+	}
+
 	if (moving) {
 		fill(153);
 		if (dir == -1) {
