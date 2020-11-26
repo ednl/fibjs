@@ -84,9 +84,9 @@ function draw() {
 	fill(255, 255, 0);
 	text(ratio, width / 2, height - 20);
 
-	//
+	// Check mouse or touch
 	if (mouseIsPressed) {
-		if (mouseButton === LEFT) {
+		if (mouseButton === LEFT || mouseButton === 0) {
 			if (!moving) {
 				step = 0;
 				if (f1 > f0) {
