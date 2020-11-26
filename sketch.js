@@ -86,7 +86,7 @@ function draw() {
 
 	// Check mouse or touch
 	if (mouseIsPressed) {
-		if (mouseButton === LEFT || mouseButton === 0) {
+		if (mouseButton === LEFT || (mouseButton === 0 && touches.length == 1)) {
 			if (!moving) {
 				step = 0;
 				if (f1 > f0) {
@@ -106,7 +106,7 @@ function draw() {
 				}
 				moving = true;
 			}
-		} else {
+		} else if (mouseButton === RIGHT || (mouseButton === 0 && touches.length > 1)) {
 			if (mouseX < width && mouseY < height) {
 				resetfib();
 			}
